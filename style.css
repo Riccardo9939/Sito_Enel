@@ -1,0 +1,597 @@
+/* Reset di base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Arial, sans-serif; /* Un font simile a quello standard */
+    color: #ffffff;
+    background-color: #fff;
+    overflow-x: hidden;
+    width: 100%;
+}
+
+@media (max-width: 1024px) {
+    .header {
+        padding: 20px 40px !important;
+    }
+    .hero {
+        padding: 60px 40px !important;
+    }
+}
+
+.header {
+    width: 100%;
+    padding: 20px 150px;
+    background-color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+
+.logo-container {
+    display: flex;
+    align-items: center; /* Allinea verticalmente logo e testo */
+    gap: 15px;           /* Spazio tra logo e scritta */
+}
+
+.logo-right {
+    height: 55px;
+}
+
+.logo-right img {
+    height: 100%;
+    width: auto;
+}
+
+.logo-img {
+    height: 55px;        /* Aumentato per rendere il logo più grande */
+    width: auto;
+}
+
+.logo-text {
+    font-size: 22px;     /* Dimensione per la scritta "Offerte Luce e Gas Business" */
+    font-weight: 600;
+    color: #333;
+    font-family: sans-serif;
+    padding-left: 10px;
+}
+
+/* Sezione Hero */
+.hero {
+    /* Gradiente con colori più definiti per far risaltare lo scorrimento */
+    background: linear-gradient(90deg, #d60086, #7d00ff, #d60086);
+    background-size: 200% 100%; /* Allunghiamo lo sfondo orizzontalmente */
+    
+    /* Animazione più lenta e fluida per un effetto professionale */
+    animation: gradientFlow 5s linear infinite;
+    
+    padding: 80px 180px;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 200% 0%; }
+}
+
+.hero-content {
+    max-width: 600px; /* Aumenta un po' il limite del testo */
+    width: 100%;
+}
+
+.subtitle {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    display: block;
+
+    color: transparent; /* Rende il colore del testo invisibile */
+    background: rgba(255, 255, 255, 0.8); /* Un bianco semi-trasparente */
+    -webkit-background-clip: text; /* Ritaglia lo sfondo sulla forma del testo */
+    background-clip: text;
+}
+
+h1 {
+    margin-top: 50px;
+    font-size: 60px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* Lista caratteristiche */
+.features {
+    margin-top: 50px;
+    list-style: none;
+    margin-bottom: 40px;
+}
+
+.features li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.features li::before {
+    content: "✔";
+    margin-right: 10px;
+    font-weight: bold;
+}
+
+/* Bottoni */
+.cta-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn-primary, .btn-secondary {
+    margin-top: -10px;
+    padding: 20px 60px;
+    border-radius: 50px;
+    border: none;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary {
+    display: inline-block;        /* Fondamentale per i link trasformati in bottoni */
+    text-decoration: none;        /* Rimuove la sottolineatura blu */
+    text-align: center;
+    background-color: #fff;
+    color: #d60086;
+}
+
+.btn-secondary {
+    display: inline-block; /* Fondamentale per far funzionare il padding */
+    text-decoration: none; /* Rimuove la sottolineatura */
+    text-align: center;
+    /* Manteniamo i tuoi stili originali */
+    background-color: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 20px 60px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover { background-color: #f0f0f0; }
+.btn-secondary:hover { background-color: rgba(255,255,255,0.1); }
+
+.info-bar {
+    display: flex;
+    gap: 20px;
+    margin-top: 15px;
+    width: 100%; 
+    max-width: 1500px; /* Questo definisce la larghezza massima dei box */
+    opacity: 0; /* Serve per evitare che appaia un istante prima dell'animazione */
+    animation: slideUp 1.5s ease-out 0.10s forwards;
+}
+
+.info-item {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    padding: 10px 25px;
+    flex: 1; 
+    
+    /* MODIFICA CHIAVE: imposta flex in colonna per mettere icona sopra testo */
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    
+    gap: 2px; /* Spazio tra icona e testo */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease;
+}
+
+.info-item .icon {
+    font-size: 20px;
+    margin-bottom: 0; /* Rimuoviamo il margine inferiore */
+}
+
+.info-item p {
+    font-size: 14px;
+    font-weight: 600;
+    margin: 0;
+    text-align: center; /* Assicura che il testo sia centrato */
+    white-space: nowrap;
+}
+
+.features-section {
+    padding: 80px 20px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.features-section h2 {
+    font-size: 48px;
+    margin-bottom: 60px;
+    color: #333333;
+}
+
+.pink-text {
+    color: #ff0055;
+}
+
+.feature-card {
+    display: flex;
+    flex-direction: row;
+    height: 550px; /* Altezza minima, non fissa */
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto 80px auto;
+    background: #fff;
+    border-radius: 40px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(214, 0, 134, 0.2);
+}
+
+.feature-text {
+    flex: 1; /* Entrambi i lati avranno lo stesso peso */
+    padding: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.feature-text h3 {
+    font-size: 32px;
+    margin: 15px 0;
+    color: #000;
+}
+
+.feature-text p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.feature-image {
+    flex: 1; /* Entrambi i lati avranno lo stesso peso */
+    background-color: #1a0b52;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Fondamentale per mantenere la forma della card */
+}
+
+.icon-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.feature-icon {
+    width: 80px !important;
+    height: 80px !important;
+    
+    /* Applichiamo colore fucsia e ombra fucsia NELLA STESSA RIGA */
+    filter: invert(15%) sepia(96%) saturate(6871%) hue-rotate(334deg) brightness(101%) contrast(105%) drop-shadow(0 0 8px #ff0055) !important;
+    
+    border: none !important;
+    background: transparent !important;
+}
+
+/* --- Rimuovi .icon-glow dal CSS e dall'HTML se lo stavi usando come contenitore --- */
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-card {
+    display: inline-block;        /* Fondamentale */
+    text-decoration: none;        /* Rimuove la sottolineatura */
+    text-align: center;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden; /* Fondamentale: nasconde la luce quando esce dal bottone */
+    background-color: #ff0055;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+/* Creiamo la "striscia" di luce */
+.btn-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%; /* Inizia fuori a sinistra */
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+    animation: shine 3s infinite; /* L'animazione dura 3 secondi e si ripete */
+}
+
+@keyframes shine {
+    0% { left: -100%; }
+    100% { left: 150%; } /* Finisce fuori a destra */
+}
+
+.feature-card.reverse {
+    flex-direction: row-reverse;
+}
+
+.feature-card.reverse .feature-text {
+    align-items: center; /* Mantiene la centratura del testo */
+}
+
+.process-section { 
+    padding: 80px 20px 150px 20px; /* Il terzo valore (150px) è il padding inferiore */
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.process-section h2 {
+    font-size: 70px;
+    margin-bottom: 60px;
+    color: #333333;
+}
+
+.process-container { 
+    max-width: 1000px; 
+    margin: 200px auto 100px auto; 
+    position: relative;
+}
+
+.steps-wrapper { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    position: relative; 
+    height: 150px; 
+    padding: 0 0px;
+}
+
+.steps-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 75px; /* Metà dell'altezza di 150px */
+    left: 150px; 
+    right: 150px;
+    height: 4px;
+    background: #ff0055;
+    z-index: 0; 
+}
+
+.step-col { 
+    position: relative; 
+    display: flex; 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center;
+    width: 33%; /* Distribuzione equa */
+}
+
+/* Cerchi sempre centrati */
+.step { 
+    width: 50px; height: 50px; 
+    background: #fff; 
+    border: 4px solid #ff0055; 
+    border-radius: 50%; color: #ff0055; 
+    display: flex; align-items: center; justify-content: center; 
+    z-index: 2; 
+    font-weight: bold;
+}
+
+/* Etichette posizionate in modo assoluto */
+.step-label { 
+    position: absolute;
+    top: 60px; /* Sotto il cerchio */
+    width: 200px;
+    color: #333; 
+    font-weight: 600;
+}
+
+.step-col:nth-child(2) .step-label {
+    top: -30px; /* Sopra il cerchio */
+}
+
+/* Box posizionati in modo assoluto */
+.box { 
+    position: absolute; 
+    width: 280px;      /* Larghezza fissa uguale per tutti */
+    min-height: 140px; /* Altezza minima uguale per tutti */
+    background: #fff; 
+    padding: 25px; 
+    border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    z-index: 1;
+    display: flex;     /* Usiamo flex per gestire meglio il contenuto */
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Posizioni verticali box */
+.step-col:nth-child(1) .box,  
+.step-col:nth-child(3) .box { bottom: 100px; } /* Box sopra */
+.step-col:nth-child(2) .box { top: 100px; }      /* Box sotto */
+
+.box h3 { 
+    color: #333; 
+    margin-bottom: 10px; 
+    font-size: 18px; 
+    text-align: center; /* Centra il titolo */
+}
+
+.box p { 
+    font-size: 14px; 
+    color: #666; 
+    line-height: 1.4; 
+    text-align: center; /* Centra il paragrafo */
+}
+
+/* Freccette */
+.arrow-down { 
+    position: absolute; left: 50%; transform: translateX(-50%); 
+    width: 0; height: 0; border-left: 10px solid transparent; 
+    border-right: 10px solid transparent;
+}
+.step-col:nth-child(1) .arrow-down, .step-col:nth-child(3) .arrow-down { 
+    bottom: -10px; border-top: 10px solid #fff; 
+}
+.step-col:nth-child(2) .arrow-down { 
+    top: -10px; border-bottom: 10px solid #fff; 
+}
+
+.contact-section {
+    background-color: #ff0055;
+    padding: 80px 100px;
+}
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+    gap: 50px;
+}
+
+.contact-left {
+    flex: 1;
+}
+
+.contact-left img {
+    width: 600px;
+    margin-bottom: 30px;
+    filter: brightness(0) invert(1); /* Rende il logo bianco */
+}
+
+.contact-left h2 {
+    font-size: 50px;
+    color: #fff;
+}
+
+.contact-right {
+    flex: 1;
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    color: #333;
+    /* Aggiungi questa riga per l'effetto tridimensionale */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); 
+}
+
+/* Stili Form */
+.contact-right input[type="text"], 
+.contact-right input[type="tel"] {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px; /* Migliora la leggibilità su mobile */
+}
+
+.contact-right label { 
+    display: block; 
+    margin-bottom: 5px; 
+    font-weight: 600; 
+    color: #333;
+}
+
+.checkbox-group { display: flex; gap: 10px; font-size: 13px; margin-bottom: 20px; }
+
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background-color: #ff0055;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.footer {
+    background-color: #f9f9f9; /* Lo stesso grigio della process-section */
+    padding: 40px 100px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.footer-logo {
+    height: 40px; /* Dimensione contenuta per il footer */
+    width: auto;
+}
+
+.footer-right {
+    display: flex;
+    align-items: center;
+    gap: 30px; /* Spazio tra P.IVA e icone */
+}
+
+.p-iva {
+    color: #666;
+    font-size: 14px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+@keyframes slideInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px); /* Parte 50px a sinistra rispetto alla sua posizione */
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0); /* Torna alla posizione originale */
+    }
+}
+
+/* Applichiamo l'animazione alla sezione Hero */
+.hero-content {
+    animation: slideInLeft 1.5s ease-out forwards;
+}
+
+@keyframes slideUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
