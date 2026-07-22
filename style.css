@@ -595,3 +595,179 @@ html {
         transform: translateY(0);
     }
 }
+
+
+/* ========================================= */
+/* CORREZIONI RESPONSIVE PER SMARTPHONE      */
+/* ========================================= */
+
+@media (max-width: 768px) {
+    /* 1. Header e Logo */
+    .header {
+        padding: 15px 20px !important;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .logo-container {
+        justify-content: center;
+    }
+
+    /* 2. Sezione Hero */
+    .hero {
+        padding: 40px 20px !important;
+        min-height: auto;
+    }
+
+    h1 {
+        font-size: 36px !important;
+        margin-top: 20px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    /* Bottoni della Hero in colonna per non farli tagliare */
+    .cta-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .btn-primary, .btn-secondary {
+        padding: 15px 30px !important;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* Info bar sotto la hero (trasformata in colonna) */
+    .info-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .info-item p {
+        white-space: normal !important; /* Permette al testo di andare a capo */
+    }
+
+    /* 3. Feature Cards (le sezioni alternate con immagini) */
+    .features-section h2 {
+        font-size: 32px !important;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .feature-card, 
+    .feature-card.reverse {
+        flex-direction: column !important;
+        height: auto !important;
+        width: 100% !important;
+        margin-bottom: 40px;
+    }
+
+    .feature-text {
+        padding: 30px 20px;
+    }
+
+    .feature-text h3 {
+        font-size: 24px;
+    }
+
+    .feature-image {
+        height: 250px; /* Diamo un'altezza fissa all'immagine su mobile */
+    }
+
+    /* 4. Process Section (I passaggi 1-2-3 che davano problemi con gli assoluti) */
+    .process-section {
+        padding: 40px 15px;
+    }
+
+    .process-section h2 {
+        font-size: 36px !important;
+        margin-bottom: 30px;
+    }
+
+    /* Rimuoviamo il posizionamento complesso dei passaggi su mobile */
+    .process-container {
+        margin: 20px auto;
+    }
+
+    .steps-wrapper {
+        flex-direction: column;
+        height: auto;
+        gap: 40px;
+    }
+
+    .steps-wrapper::before {
+        display: none; /* Nascondiamo la linea orizzontale che su smartphone non ha senso */
+    }
+
+    .step-col {
+        width: 100% !important;
+    }
+
+    .step-label {
+        position: relative !important;
+        top: 10px !important;
+        width: 100% !important;
+        text-align: center;
+    }
+
+    /* Trasformiamo i box assoluti in blocchi normali in-colonna */
+    .step-col:nth-child(1) .box, 
+    .step-col:nth-child(2) .box, 
+    .step-col:nth-child(3) .box {
+        position: relative !important;
+        top: auto !important;
+        bottom: auto !important;
+        width: 100% !important;
+        margin-top: 15px;
+        min-height: auto;
+    }
+
+    .arrow-down {
+        display: none; /* Nascondiamo le freccette nei box su mobile */
+    }
+
+    /* 5. Sezione Contatti e Form */
+    .contact-section {
+        padding: 40px 20px;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .contact-left img {
+        width: 100% !important;
+        max-width: 250px;
+    }
+
+    .contact-left h2 {
+        font-size: 32px;
+        text-align: center;
+    }
+
+    .contact-right {
+        padding: 20px;
+        width: 100%;
+    }
+
+    /* 6. Footer */
+    .footer {
+        padding: 30px 20px;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
+    }
+
+    .footer-right {
+        flex-direction: column;
+        gap: 15px;
+    }
+}
