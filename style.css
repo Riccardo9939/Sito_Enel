@@ -678,56 +678,70 @@ html {
         height: 250px; /* Diamo un'altezza fissa all'immagine su mobile */
     }
 
-    /* 4. Process Section (I passaggi 1-2-3 che davano problemi con gli assoluti) */
+  /* 4. Process Section (Corretta per smartphone) */
     .process-section {
         padding: 40px 15px;
     }
 
     .process-section h2 {
         font-size: 36px !important;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
     }
 
-    /* Rimuoviamo il posizionamento complesso dei passaggi su mobile */
     .process-container {
-        margin: 20px auto;
+        margin: 10px auto;
     }
 
     .steps-wrapper {
         flex-direction: column;
         height: auto;
-        gap: 40px;
+        gap: 30px; /* Spazio tra un blocco e l'altro */
     }
 
     .steps-wrapper::before {
-        display: none; /* Nascondiamo la linea orizzontale che su smartphone non ha senso */
+        display: none; /* Nasconde la linea orizzontale */
     }
 
     .step-col {
         width: 100% !important;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
     }
 
+    /* 1. Il cerchio con il numero va per primo */
+    .step {
+        position: relative !important;
+        order: 1;
+        margin-bottom: 5px;
+    }
+
+    /* 2. L'etichetta del testo va subito sotto al cerchio */
     .step-label {
         position: relative !important;
-        top: 10px !important;
+        top: auto !important;
+        order: 2;
         width: 100% !important;
         text-align: center;
+        margin-bottom: 15px;
+        font-size: 16px;
     }
 
-    /* Trasformiamo i box assoluti in blocchi normali in-colonna */
-    .step-col:nth-child(1) .box, 
-    .step-col:nth-child(2) .box, 
-    .step-col:nth-child(3) .box {
+    /* 3. Il box bianco con la spiegazione chiude il blocco */
+    .step-col .box {
         position: relative !important;
         top: auto !important;
         bottom: auto !important;
+        order: 3;
         width: 100% !important;
-        margin-top: 15px;
+        margin-top: 0 !important;
         min-height: auto;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     }
 
     .arrow-down {
-        display: none; /* Nascondiamo le freccette nei box su mobile */
+        display: none; /* Nasconde le freccette */
     }
 
     /* 5. Sezione Contatti e Form */
